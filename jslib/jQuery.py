@@ -1,10 +1,4 @@
-from textwrap import dedent
 from string import Template
-from pylru import lrudecorator
-
-@lrudecorator(100)
-def dTemplate(s):
-    return Template(dedent(s))
 
 class JavaScript:
     _autogen_count = 0
