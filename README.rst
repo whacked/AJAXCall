@@ -7,7 +7,7 @@ usage
 
 ::
     
-    from AJAXCall.jslib import jQuery
+    from AJAXCall import jQuery
     jqajax = jQuery.JavaScript(
         endpoint = '/someURL',
         method = 'post',
@@ -36,7 +36,7 @@ Here's a minimal example for Flask:
 ::
     
     from flask import Flask, render_template_string, request, url_for
-    from jslib import jQuery
+    from AJAXCall import jQuery
 
     app = Flask(__name__)
 
