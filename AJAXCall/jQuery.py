@@ -15,9 +15,14 @@ class JavaScript:
 
     def create_ajax_object(self, **override):
         tpl = Template('''{ url:${URL}${SPECIAL}${DATA}${ON_RETURN} }''')
-        endpoint = self._conf.get('endpoint')
+
+        endpoint = self._conf.get('raw_endpoint')
+        if not endpoint and 'endpoitn' in self._conf:
+            endpoint = '"%s"'%self._conf.get('endpoint')
+        if not endpoint:
+            endpoint = 'document.baseURI'
         return tpl.substitute(
-            URL = endpoint and '"%s"'%endpoint or 'document.baseURI',
+            URL = endpoint,
             SPECIAL = ''.join(
                 '\n, {0}:"{1}"'.format(
                     opt, override.get(opt, self._conf[opt])
