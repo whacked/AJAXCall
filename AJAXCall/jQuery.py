@@ -17,7 +17,7 @@ class JavaScript:
         tpl = Template('''{ url:${URL}${SPECIAL}${DATA}${ON_RETURN} }''')
 
         endpoint = self._conf.get('raw_endpoint')
-        if not endpoint and 'endpoitn' in self._conf:
+        if not endpoint and 'endpoint' in self._conf:
             endpoint = '"%s"'%self._conf.get('endpoint')
         if not endpoint:
             endpoint = 'document.baseURI'
