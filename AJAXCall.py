@@ -3,7 +3,7 @@ from __future__ import (absolute_import, division,
 
 if __name__ == '__main__':
 
-    from jslib import jQuery
+    from AJAXCall import jQuery
 
     jqajax = jQuery.JavaScript(
         endpoint = '/someURL',
